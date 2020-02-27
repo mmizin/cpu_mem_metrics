@@ -1,0 +1,36 @@
+#!/bin/bash
+
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+WHITE='\033[1;37m'
+source=$1
+
+if [[ -z "$source" ]]
+then
+	echo "Enter plese what metrics do you want to see 'cpu' or 'mem'"
+	exit
+fi
+
+if [[ "$source" == "cpu" || "$source" == "mem" ]]
+then
+	if [[ "$OSTYPE" == "darwin18" || "$OSTYPE" == "linux-gnu" ]]
+	then
+		case $source in
+			"cpu") echo -e "${GREEN}CPU metrics${WHITE}"
+				lscpu
+				exit
+				;;
+			"mem") echo -e "${GREEN}RAM metrics${WHITE}"
+				vmstat -s
+				exit
+				;;
+		esac
+	else
+		echo -e "${RED}We dont recomand you to use THE WINDOWS !!!"
+	fi
+
+else
+       	echo -e "${RED}Check please that you entered corect data${WHITE}"
+        exit
+fi
+
