@@ -3,7 +3,7 @@ This script helps you to get CPU and memory information
 
 ## Getting Started
 
-These instructions will tell you how to run our script to find out basic information of your machine
+These instructions will tell you how to run our script that displays basic information of your machine
 
 ### Prerequisites
 
