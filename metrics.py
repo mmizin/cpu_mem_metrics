@@ -2,7 +2,7 @@ import sys
 from pprint import pprint
 import psutil
 
-if len(sys.argv) == 2 and sys.argv[1] == "cpu" or sys.argv[1] == "mem":
+if len(sys.argv) == 2 and (sys.argv[1] == "cpu" or sys.argv[1] == "mem"):
     if sys.argv[1] == "cpu":
         print("CPU metrics")
         pprint(dict(psutil.cpu_times_percent(interval=1, percpu=False)._asdict()))
